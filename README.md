@@ -133,6 +133,7 @@ if len(contours) > 0:
   <img width="300" height="250" src="Images/7.Start_Points/image4.jpg">
   <img width="300" height="250" src="Images/7.Start_Points/image5.jpg">
 </p>
+
 ```
                     #--Far Points-- (white color)
                     cv2.circle(test_window, far_pts, 2, (255,255,255), 2)
