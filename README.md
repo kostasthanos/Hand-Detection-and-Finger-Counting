@@ -82,5 +82,22 @@ if len(contours) > 0:
   <img width="300" height="250" src="Images/4.Center_max_contour/image4.jpg">
 </p>
 
+```
+        # --Contour Polygon--
+        contour_poly = cv2.approxPolyDP(max_contour, 0.01*cv2.arcLength(max_contour,True), True)
+        # Draw contour polygon (white color)
+        cv2.fillPoly(test_window, [max_contour], (255,255,255)) 
+```
+<p align="center">
+  <img width="300" height="250" src="Images/5.Contour_Poly/image1.jpg">
+  <img width="300" height="250" src="Images/5.Contour_Poly/image2.jpg">
+  <img width="300" height="250" src="Images/5.Contour_Poly/image3.jpg">
+</p>
+
+<p align="center">
+  <img width="300" height="250" src="Images/5.Contour_Poly/image4.jpg">
+  <img width="300" height="250" src="Images/5.Contour_Poly/image5.jpg">
+</p>
+
 ## Author
 * **Konstantinos Thanos**
