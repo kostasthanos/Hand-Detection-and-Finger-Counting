@@ -62,5 +62,25 @@ if len(contours) > 0:
   <img width="300" height="250" src="Images/3.Point_with_miny/image4.png">
 </p>
 
+```
+         M = cv2.moments(max_contour) # Moments
+
+        # Find the center of the max contour
+        if M["m00"]!=0:
+            cX = int(M["m10"] / M["m00"])
+            cY = int(M["m01"] / M["m00"])
+            # Draw circle (red color) in the center of max contour
+            cv2.circle(test_window, (cX, cY), 6, (0,0,255), 3) 
+```
+<p align="center">
+  <img width="300" height="250" src="Images/4.Center_max_contour/image1.jpg">
+  <img width="300" height="250" src="Images/4.Center_max_contour/image2.jpg">
+</p>
+
+<p align="center">
+  <img width="300" height="250" src="Images/4.Center_max_contour/image3.jpg">
+  <img width="300" height="250" src="Images/4.Center_max_contour/image4.jpg">
+</p>
+
 ## Author
 * **Konstantinos Thanos**
