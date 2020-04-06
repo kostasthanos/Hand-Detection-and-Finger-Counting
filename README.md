@@ -130,8 +130,8 @@ if len(contours) > 0:
 </p>
 
 <p align="center">
-  <img width="300" height="250" src="Images/7.Start_Points/image4.jpg">
-  <img width="300" height="250" src="Images/7.Start_Points/image5.jpg">
+  <img width="300" height="250" src="Images/7.End_Points/image4.jpg">
+  <img width="300" height="250" src="Images/7.End_Points/image5.jpg">
 </p>
 
 ```
