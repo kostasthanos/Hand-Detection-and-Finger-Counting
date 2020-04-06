@@ -41,5 +41,26 @@ if len(contours) > 0:
   <img width="300" height="250" src="Images/2.Convex_Hull/image6.jpg">
 </p>
 
+```
+        min_y = frame.shape[0] # Set the minimum y-value to a variable
+        final_point = (frame.shape[1], frame.shape[0])
+        for i in range(len(convhull)):
+            point = (convhull[i][0][0], convhull[i][0][1])
+            if point[1] < min_y:
+                min_y = point[1]
+                final_point = point
+        # Draw a circle (black color) to the point with the minimum y-value (height)
+        cv2.circle(test_window, final_point, 5, (0,0,0), 2)
+```
+<p align="center">
+  <img width="300" height="250" src="Images/3.Point_with_miny/image1.png">
+  <img width="300" height="250" src="Images/3.Point_with_miny/image2.png">
+</p>
+
+<p align="center">
+  <img width="300" height="250" src="Images/3.Point_with_miny/image3.png">
+  <img width="300" height="250" src="Images/3.Point_with_miny/image4.png">
+</p>
+
 ## Author
 * **Konstantinos Thanos**
