@@ -55,9 +55,6 @@ if len(contours) > 0:
 <p align="center">
   <img width="200" height="165" src="Images/3.Point_with_miny/image1.png">
   <img width="200" height="165" src="Images/3.Point_with_miny/image2.png">
-</p>
-
-<p align="center">
   <img width="200" height="165" src="Images/3.Point_with_miny/image3.png">
   <img width="200" height="165" src="Images/3.Point_with_miny/image4.png">
 </p>
@@ -75,9 +72,6 @@ if len(contours) > 0:
 <p align="center">
   <img width="200" height="165" src="Images/4.Center_max_contour/image1.jpg">
   <img width="200" height="165" src="Images/4.Center_max_contour/image2.jpg">
-</p>
-
-<p align="center">
   <img width="200" height="165" src="Images/4.Center_max_contour/image3.jpg">
   <img width="200" height="165" src="Images/4.Center_max_contour/image4.jpg">
 </p>
