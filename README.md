@@ -30,9 +30,9 @@ if len(contours) > 0:
         cv2.drawContours(test_window, [convhull], -1, (0,0,255), 3, 2)
 ```
 <p align="center">
-  <img width="300" height="250" src="Images/2.Convex_Hull/image1.jpg">
-  <img width="300" height="250" src="Images/2.Convex_Hull/image2.jpg">
-  <img width="300" height="250" src="Images/2.Convex_Hull/image3.jpg">
+  <img width="250" height="208" src="Images/2.Convex_Hull/image1.jpg">
+  <img width="250" height="208" src="Images/2.Convex_Hull/image2.jpg">
+  <img width="250" height="208" src="Images/2.Convex_Hull/image3.jpg">
 </p>
 
 <p align="center">
