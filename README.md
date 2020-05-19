@@ -12,14 +12,14 @@ if len(contours) > 0:
         cv2.drawContours(test_window, max_contour, -1, (255,0,0), 3)
 ```
 <p align="center">
-  <img width="250" height="208" src="Images/1.Contour/image1.jpg">
-  <img width="250" height="208" src="Images/1.Contour/image2.jpg">
-  <img width="250" height="208" src="Images/1.Contour/image3.jpg">
+  <img width="200" height="165" src="Images/1.Contour/image1.jpg">
+  <img width="200" height="165" src="Images/1.Contour/image2.jpg">
+  <img width="200" height="165" src="Images/1.Contour/image3.jpg">
 </p>
 
 <p align="center">
-  <img width="250" height="208" src="Images/1.Contour/image4.jpg">
-  <img width="250" height="208" src="Images/1.Contour/image5.jpg">
+  <img width="200" height="165" src="Images/1.Contour/image4.jpg">
+  <img width="200" height="165" src="Images/1.Contour/image5.jpg">
 </p>
 
 ```
@@ -30,15 +30,15 @@ if len(contours) > 0:
         cv2.drawContours(test_window, [convhull], -1, (0,0,255), 3, 2)
 ```
 <p align="center">
-  <img width="250" height="208" src="Images/2.Convex_Hull/image1.jpg">
-  <img width="250" height="208" src="Images/2.Convex_Hull/image2.jpg">
-  <img width="250" height="208" src="Images/2.Convex_Hull/image3.jpg">
+  <img width="200" height="165" src="Images/2.Convex_Hull/image1.jpg">
+  <img width="200" height="165" src="Images/2.Convex_Hull/image2.jpg">
+  <img width="200" height="165" src="Images/2.Convex_Hull/image3.jpg">
 </p>
 
 <p align="center">
-  <img width="250" height="208" src="Images/2.Convex_Hull/image4.jpg">
-  <img width="250" height="208" src="Images/2.Convex_Hull/image5.jpg">
-  <img width="250" height="208" src="Images/2.Convex_Hull/image6.jpg">
+  <img width="200" height="165" src="Images/2.Convex_Hull/image4.jpg">
+  <img width="200" height="165" src="Images/2.Convex_Hull/image5.jpg">
+  <img width="200" height="165" src="Images/2.Convex_Hull/image6.jpg">
 </p>
 
 ```
@@ -53,13 +53,13 @@ if len(contours) > 0:
         cv2.circle(test_window, final_point, 5, (0,0,0), 2)
 ```
 <p align="center">
-  <img width="250" height="208" src="Images/3.Point_with_miny/image1.png">
-  <img width="250" height="208" src="Images/3.Point_with_miny/image2.png">
+  <img width="200" height="165" src="Images/3.Point_with_miny/image1.png">
+  <img width="200" height="165" src="Images/3.Point_with_miny/image2.png">
 </p>
 
 <p align="center">
-  <img width="250" height="208" src="Images/3.Point_with_miny/image3.png">
-  <img width="250" height="208" src="Images/3.Point_with_miny/image4.png">
+  <img width="200" height="165" src="Images/3.Point_with_miny/image3.png">
+  <img width="200" height="165" src="Images/3.Point_with_miny/image4.png">
 </p>
 
 ```
@@ -73,13 +73,13 @@ if len(contours) > 0:
             cv2.circle(test_window, (cX, cY), 6, (0,0,255), 3) 
 ```
 <p align="center">
-  <img width="250" height="208" src="Images/4.Center_max_contour/image1.jpg">
-  <img width="250" height="208" src="Images/4.Center_max_contour/image2.jpg">
+  <img width="200" height="165" src="Images/4.Center_max_contour/image1.jpg">
+  <img width="200" height="165" src="Images/4.Center_max_contour/image2.jpg">
 </p>
 
 <p align="center">
-  <img width="250" height="208" src="Images/4.Center_max_contour/image3.jpg">
-  <img width="250" height="208" src="Images/4.Center_max_contour/image4.jpg">
+  <img width="200" height="165" src="Images/4.Center_max_contour/image3.jpg">
+  <img width="200" height="165" src="Images/4.Center_max_contour/image4.jpg">
 </p>
 
 ```
@@ -89,14 +89,14 @@ if len(contours) > 0:
         cv2.fillPoly(test_window, [max_contour], (255,255,255)) 
 ```
 <p align="center">
-  <img width="250" height="208" src="Images/5.Contour_Poly/image1.jpg">
-  <img width="250" height="208" src="Images/5.Contour_Poly/image2.jpg">
-  <img width="250" height="208" src="Images/5.Contour_Poly/image3.jpg">
+  <img width="200" height="165" src="Images/5.Contour_Poly/image1.jpg">
+  <img width="200" height="165" src="Images/5.Contour_Poly/image2.jpg">
+  <img width="200" height="165" src="Images/5.Contour_Poly/image3.jpg">
 </p>
 
 <p align="center">
-  <img width="250" height="208" src="Images/5.Contour_Poly/image4.jpg">
-  <img width="250" height="208" src="Images/5.Contour_Poly/image5.jpg">
+  <img width="200" height="165" src="Images/5.Contour_Poly/image4.jpg">
+  <img width="200" height="165" src="Images/5.Contour_Poly/image5.jpg">
 </p>
 
 ```
@@ -109,14 +109,14 @@ if len(contours) > 0:
                     cv2.circle(test_window, start_pts, 2, (0,255,255), 2)
 ```
 <p align="center">
-  <img width="250" height="208" src="Images/6.Start_Points/image1.jpg">
-  <img width="250" height="208" src="Images/6.Start_Points/image2.jpg">
-  <img width="250" height="208" src="Images/6.Start_Points/image3.jpg">
+  <img width="200" height="165" src="Images/6.Start_Points/image1.jpg">
+  <img width="200" height="165" src="Images/6.Start_Points/image2.jpg">
+  <img width="200" height="165" src="Images/6.Start_Points/image3.jpg">
 </p>
 
 <p align="center">
-  <img width="250" height="208" src="Images/6.Start_Points/image4.jpg">
-  <img width="250" height="208" src="Images/6.Start_Points/image5.jpg">
+  <img width="200" height="165" src="Images/6.Start_Points/image4.jpg">
+  <img width="200" height="165" src="Images/6.Start_Points/image5.jpg">
 </p>
 
 ```
@@ -124,14 +124,14 @@ if len(contours) > 0:
                     cv2.circle(test_window, end_pts, 2, (0,0,0), 2)
 ```
 <p align="center">
-  <img width="250" height="208" src="Images/7.End_Points/image1.jpg">
-  <img width="250" height="208" src="Images/7.End_Points/image2.jpg">
-  <img width="250" height="208" src="Images/7.End_Points/image3.jpg">
+  <img width="200" height="165" src="Images/7.End_Points/image1.jpg">
+  <img width="200" height="165" src="Images/7.End_Points/image2.jpg">
+  <img width="200" height="165" src="Images/7.End_Points/image3.jpg">
 </p>
 
 <p align="center">
-  <img width="250" height="208" src="Images/7.End_Points/image4.jpg">
-  <img width="250" height="208" src="Images/7.End_Points/image5.jpg">
+  <img width="200" height="165" src="Images/7.End_Points/image4.jpg">
+  <img width="200" height="165" src="Images/7.End_Points/image5.jpg">
 </p>
 
 ```
@@ -139,14 +139,14 @@ if len(contours) > 0:
                     cv2.circle(test_window, far_pts, 2, (255,255,255), 2)
 ```
 <p align="center">
-  <img width="250" height="208" src="Images/8.Far_Points/image1.jpg">
-  <img width="250" height="208" src="Images/8.Far_Points/image2.jpg">
-  <img width="250" height="208" src="Images/8.Far_Points/image3.jpg">
+  <img width="200" height="165" src="Images/8.Far_Points/image1.jpg">
+  <img width="200" height="165" src="Images/8.Far_Points/image2.jpg">
+  <img width="200" height="165" src="Images/8.Far_Points/image3.jpg">
 </p>
 
 <p align="center">
-  <img width="250" height="208" src="Images/8.Far_Points/image4.jpg">
-  <img width="250" height="208" src="Images/8.Far_Points/image5.jpg">
+  <img width="200" height="165" src="Images/8.Far_Points/image4.jpg">
+  <img width="200" height="165" src="Images/8.Far_Points/image5.jpg">
 </p>
 
 ## Author
