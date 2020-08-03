@@ -189,14 +189,14 @@ we getting an array where each row contains the values:
 3. farthest point 
 4. approximate distance to farthest point 
 
-Then we will find the points in which each defect starts and ends
+Then we can find these points plus the mid points on each frame as below
 
 ```python
-defects = cv2.convexityDefects(contour_poly, hull)
 for i in range(defects.shape[0]): # Len of arrays
     start_index, end_index, far_pt_index, fix_dept = defects[i][0]
     start_pts = tuple(contour_poly[start_index][0])
     end_pts = tuple(contour_poly[end_index][0])
+    far_pts = tuple(contour_poly[far_pt_index][0])
     mid_pts = (int((start_pts[0]+end_pts[0])/2), int((start_pts[1]+end_pts[1])/2))
     #--Start Points-- (yellow color)
     cv2.circle(test_window, start_pts, 2, (0,255,255), 2)
@@ -227,7 +227,22 @@ cv2.circle(test_window, end_pts, 2, (0,0,0), 2)
   <img width="200" height="165" src="Images/7.End_Points/image5.jpg">
 </p>
 
-Having calculated the starting and the ending points it's time to calculate the defect points.
+```python
+#--Far Points-- (white color)
+cv2.circle(test_window, far_pts, 2, (255,255,255), 2)
+```
+<p align="center">
+  <img width="200" height="165" src="Images/8.Far_Points/image1.jpg">
+  <img width="200" height="165" src="Images/8.Far_Points/image2.jpg">
+  <img width="200" height="165" src="Images/8.Far_Points/image3.jpg">
+</p>
+
+<p align="center">
+  <img width="200" height="165" src="Images/7.Far_Points/image4.jpg">
+  <img width="200" height="165" src="Images/7.Far_Points/image5.jpg">
+</p>
+
+
 
 ## Author
 * **Konstantinos Thanos**
