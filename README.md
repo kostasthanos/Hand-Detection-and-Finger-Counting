@@ -10,68 +10,80 @@ First of all we define a smaller window (*test_window*) inside the main frame wi
 top_left = (245, 150) 
 bottom_right = (580, 395) 
 ```
-
-<img align="center" width="300" height="250" src="https://raw.githubusercontent.com/kostasthanos/Hand-Gestures-and-Finger-Counting/master/Images/roi.png ">
-
+<p align="center">
+<img width="200" height="165" src="Images/roi.png ">
+</p>
 
 ## Binary mask for the hand
 We want to focuse only to user's hand. So in this part we must isolate the hand from the background. 
 
 First of all we must apply Gaussian Blur on the ROI
 
-	test_window_blurred = cv2.GaussianBlur(test_window, (5,5), 0)
-	
+```python
+test_window_blurred = cv2.GaussianBlur(test_window, (5,5), 0)
+```
+
 Our window is in RGB format by default. We will convert it to HSV format
 
-	# Convert to HSV format
-	hsv = cv2.cvtColor(test_window_blurred, cv2.COLOR_BGR2HSV)
+```python
+# Convert to HSV format
+hsv = cv2.cvtColor(test_window_blurred, cv2.COLOR_BGR2HSV)
+```
 	
 In order to find user's skin color (proper values), user can modify the trackbars until the hand is the only thing that is visible. To enable trackbars window we must define it before we start our program. So after the import of the libraries we can add this part of code
 
-	def nothing(x):
-                pass
+```python
+def nothing(x):
+	pass
 
-	cv2.namedWindow("trackbars")
-	cv2.createTrackbar("L-H", "trackbars", 0, 179, nothing)
-	cv2.createTrackbar("L-S", "trackbars", 0, 255, nothing)
-	cv2.createTrackbar("L-V", "trackbars", 0, 255, nothing)
-	cv2.createTrackbar("U-H", "trackbars", 179, 179, nothing)
-	cv2.createTrackbar("U-S", "trackbars", 255, 255, nothing)
-	cv2.createTrackbar("U-V", "trackbars", 255, 255, nothing)
+cv2.namedWindow("trackbars")
+cv2.createTrackbar("L-H", "trackbars", 0, 179, nothing)
+cv2.createTrackbar("L-S", "trackbars", 0, 255, nothing)
+cv2.createTrackbar("L-V", "trackbars", 0, 255, nothing)
+cv2.createTrackbar("U-H", "trackbars", 179, 179, nothing)
+cv2.createTrackbar("U-S", "trackbars", 255, 255, nothing)
+cv2.createTrackbar("U-V", "trackbars", 255, 255, nothing)
+```
 	
 After that is time to define a range for the colors, based on arrays
 
-	# Find finger (skin) color using trackbars
-	l_h = cv2.getTrackbarPos("L-H", "trackbars")
-	l_s = cv2.getTrackbarPos("L-S", "trackbars")
-	l_v = cv2.getTrackbarPos("L-V", "trackbars")
-	u_h = cv2.getTrackbarPos("U-H", "trackbars")
-	u_s = cv2.getTrackbarPos("U-S", "trackbars")
-	u_v = cv2.getTrackbarPos("U-V", "trackbars")
-	
-	# Create a range for the colors (skin color) 
-        lower_color = np.array([l_h, l_s, l_v])
-        upper_color = np.array([u_h, u_s, u_v])
+```python
+# Find finger (skin) color using trackbars
+l_h = cv2.getTrackbarPos("L-H", "trackbars")
+l_s = cv2.getTrackbarPos("L-S", "trackbars")
+l_v = cv2.getTrackbarPos("L-V", "trackbars")
+u_h = cv2.getTrackbarPos("U-H", "trackbars")
+u_s = cv2.getTrackbarPos("U-S", "trackbars")
+u_v = cv2.getTrackbarPos("U-V", "trackbars")
+
+# Create a range for the colors (skin color) 
+lower_color = np.array([l_h, l_s, l_v])
+upper_color = np.array([u_h, u_s, u_v])
+```
     
 Finally we will get the following mask
 
-	# Create a mask
-	mask = cv2.inRange(hsv, lower_color, upper_color)
-	cv2.imshow("Mask", mask) # Show mask frame
+```python
+# Create a mask
+mask = cv2.inRange(hsv, lower_color, upper_color)
+cv2.imshow("Mask", mask) # Show mask frame
+```
 	
-<center>	
-<img width="550" height="200" src="https://raw.githubusercontent.com/kostasthanos/Hand-Gestures-and-Finger-Counting/master/Images/mask.png">
-</center>	
+<p align="center">	
+<img width="550" height="200" src="Images/mask.png">
+</p>	
 
 ## Computing the maximum contour and it's convex hull
 For each frame on our capture we are finding the maximum contour inside the ROI.
 
-        if len(contours) > 0:
-                # Find the maximum contour each time (on each frame)
-                # --Max Contour--
-                max_contour = max(contours, key=cv2.contourArea)
-                # Draw maximum contour (blue color)
-                cv2.drawContours(test_window, max_contour, -1, (255,0,0), 3)
+```python
+if len(contours) > 0:
+	# Find the maximum contour each time (on each frame)
+	# --Max Contour--
+	max_contour = max(contours, key=cv2.contourArea)
+	# Draw maximum contour (blue color)
+	cv2.drawContours(test_window, max_contour, -1, (255,0,0), 3)
+```
 
 <p align="center">
   <img width="200" height="165" src="Images/1.Contour/image1.jpg">
