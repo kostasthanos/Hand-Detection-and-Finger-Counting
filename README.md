@@ -160,6 +160,7 @@ if M["m00"]!=0:
 </p>
 
 ## Calculating the defect points in the hand
+[Contours in OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_contours_more_functions/py_contours_more_functions.html)
 First we will find and draw polygon that is defined by the contour
 
 ```python
@@ -238,8 +239,8 @@ cv2.circle(test_window, far_pts, 2, (255,255,255), 2)
 </p>
 
 <p align="center">
-  <img width="200" height="165" src="Images/7.Far_Points/image4.jpg">
-  <img width="200" height="165" src="Images/7.Far_Points/image5.jpg">
+  <img width="200" height="165" src="Images/8.Far_Points/image4.jpg">
+  <img width="200" height="165" src="Images/8.Far_Points/image5.jpg">
 </p>
 
 
