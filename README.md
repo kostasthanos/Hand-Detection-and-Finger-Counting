@@ -76,6 +76,7 @@ cv2.imshow("Mask", mask) # Show mask frame
 ## Computing the maximum contour and it's convex hull
 For each frame on our capture we are finding the maximum contour inside the ROI.
 
+### Max contour
 ```python
 if len(contours) > 0:
 	# Find the maximum contour each time (on each frame)
@@ -96,12 +97,14 @@ if len(contours) > 0:
   <img width="200" height="165" src="Images/1.Contour/image5.jpg">
 </p>
 
-```
-        # Find the convex hull "around" the max_contour
-        # --Convex Hull--
-        convhull = cv2.convexHull(max_contour, returnPoints = True) 
-        # Draw convex hull (red color)
-        cv2.drawContours(test_window, [convhull], -1, (0,0,255), 3, 2)
+### Convex Hull of max contour
+
+```python
+# Find the convex hull "around" the max_contour
+# --Convex Hull--
+convhull = cv2.convexHull(max_contour, returnPoints = True) 
+# Draw convex hull (red color)
+cv2.drawContours(test_window, [convhull], -1, (0,0,255), 3, 2)
 ```
 <p align="center">
   <img width="200" height="165" src="Images/2.Convex_Hull/image1.jpg">
@@ -115,16 +118,18 @@ if len(contours) > 0:
   <img width="200" height="165" src="Images/2.Convex_Hull/image6.jpg">
 </p>
 
-```
-        min_y = frame.shape[0] # Set the minimum y-value to a variable
-        final_point = (frame.shape[1], frame.shape[0])
-        for i in range(len(convhull)):
-            point = (convhull[i][0][0], convhull[i][0][1])
-            if point[1] < min_y:
-                min_y = point[1]
-                final_point = point
-        # Draw a circle (black color) to the point with the minimum y-value (height)
-        cv2.circle(test_window, final_point, 5, (0,0,0), 2)
+## Finding the point with the minimum y-value from the convex hull
+
+```python
+min_y = frame.shape[0] # Set the minimum y-value to a variable
+final_point = (frame.shape[1], frame.shape[0])
+for i in range(len(convhull)):
+    point = (convhull[i][0][0], convhull[i][0][1])
+    if point[1] < min_y:
+	min_y = point[1]
+	final_point = point
+# Draw a circle (black color) to the point with the minimum y-value (height)
+cv2.circle(test_window, final_point, 5, (0,0,0), 2)
 ```
 <p align="center">
   <img width="200" height="165" src="Images/3.Point_with_miny/image1.png">
