@@ -5,9 +5,11 @@ Below there are some instructions and information about the most significant par
 ## Preparing the environment
 First of all we define a smaller window (*test_window*) inside the main frame window which is our ROI (Region of Interest). Only inside this sub-frame our tests will be visible.
 
-        # Points (x1,y1) and (x2, y2)
-	top_left = (245, 150) 
-	bottom_right = (580, 395) 
+```python
+# Points (x1,y1) and (x2, y2)
+top_left = (245, 150) 
+bottom_right = (580, 395) 
+```
 
 <center>	
 <img width="300" height="250" src="https://raw.githubusercontent.com/kostasthanos/Hand-Gestures-and-Finger-Counting/master/Images/roi.png ">
