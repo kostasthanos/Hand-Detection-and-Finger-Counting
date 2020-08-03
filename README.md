@@ -1,4 +1,4 @@
-# Hand Gestures and Finger Counting 
+# Hand Tracking and Finger Counting 
 This is a project made with Python and OpenCV library. 
 Below there are some instructions and information about the most significant parts of this project
  
@@ -243,6 +243,13 @@ cv2.circle(test_window, far_pts, 2, (255,255,255), 2)
   <img width="200" height="165" src="Images/8.Far_Points/image4.jpg">
   <img width="200" height="165" src="Images/8.Far_Points/image5.jpg">
 </p>
+
+## Finger Counting
+In order to do the finger counting we should find a way to check how many fingers are displayed. To do this we calculate the angle shown below.
+<p align="center">
+  <img width="400" height="280" src="Images/defects.png">
+</p>
+ 
 
 
 
