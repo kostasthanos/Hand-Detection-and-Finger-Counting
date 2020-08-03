@@ -160,7 +160,8 @@ if M["m00"]!=0:
 </p>
 
 ## Calculating the defect points in the hand
-[Contours in OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_contours_more_functions/py_contours_more_functions.html)
+[Contours in OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_contours_more_functions/py_contours_more_functions.html)  
+
 First we will find and draw polygon that is defined by the contour
 
 ```python
