@@ -118,7 +118,8 @@ cv2.drawContours(test_window, [convhull], -1, (0,0,255), 3, 2)
   <img width="200" height="165" src="Images/2.Convex_Hull/image6.jpg">
 </p>
 
-## Finding the point with the minimum y-value from the convex hull
+## Finding the point with the minimum y-value inside the convex hull
+This is the *highest* point of the convex hull.
 
 ```python
 min_y = frame.shape[0] # Set the minimum y-value to a variable
@@ -138,15 +139,18 @@ cv2.circle(test_window, final_point, 5, (0,0,0), 2)
   <img width="200" height="165" src="Images/3.Point_with_miny/image4.png">
 </p>
 
-```
-         M = cv2.moments(max_contour) # Moments
+## Finding the center of the max_contour
+The center of max contour is defined by the point (cx, cy) using *cv2.momenth()*
 
-        # Find the center of the max contour
-        if M["m00"]!=0:
-            cX = int(M["m10"] / M["m00"])
-            cY = int(M["m01"] / M["m00"])
-            # Draw circle (red color) in the center of max contour
-            cv2.circle(test_window, (cX, cY), 6, (0,0,255), 3) 
+```python
+ M = cv2.moments(max_contour) # Moments
+
+# Find the center of the max contour
+if M["m00"]!=0:
+    cX = int(M["m10"] / M["m00"])
+    cY = int(M["m01"] / M["m00"])
+    # Draw circle (red color) in the center of max contour
+    cv2.circle(test_window, (cX, cY), 6, (0,0,255), 3) 
 ```
 <p align="center">
   <img width="200" height="165" src="Images/4.Center_max_contour/image1.jpg">
@@ -155,11 +159,14 @@ cv2.circle(test_window, final_point, 5, (0,0,0), 2)
   <img width="200" height="165" src="Images/4.Center_max_contour/image4.jpg">
 </p>
 
-```
-        # --Contour Polygon--
-        contour_poly = cv2.approxPolyDP(max_contour, 0.01*cv2.arcLength(max_contour,True), True)
-        # Draw contour polygon (white color)
-        cv2.fillPoly(test_window, [max_contour], (255,255,255)) 
+## Calculating the defect points in the hand
+First we will find and draw polygon that is defined by the contour
+
+```python
+# --Contour Polygon--
+contour_poly = cv2.approxPolyDP(max_contour, 0.01*cv2.arcLength(max_contour,True), True)
+# Draw contour polygon (white color)
+cv2.fillPoly(test_window, [max_contour], (255,255,255)) 
 ```
 <p align="center">
   <img width="200" height="165" src="Images/5.Contour_Poly/image1.jpg">
@@ -172,14 +179,16 @@ cv2.circle(test_window, final_point, 5, (0,0,0), 2)
   <img width="200" height="165" src="Images/5.Contour_Poly/image5.jpg">
 </p>
 
-```
-                for i in range(defects.shape[0]): # Len of arrays
-                    start_index, end_index, far_pt_index, fix_dept = defects[i][0]
-                    start_pts = tuple(contour_poly[start_index][0])
-                    end_pts = tuple(contour_poly[end_index][0])
-                    mid_pts = (int((start_pts[0]+end_pts[0])/2), int((start_pts[1]+end_pts[1])/2))
-                    #--Start Points-- (yellow color)
-                    cv2.circle(test_window, start_pts, 2, (0,255,255), 2)
+Then we will find the start and the end points
+
+```python
+for i in range(defects.shape[0]): # Len of arrays
+    start_index, end_index, far_pt_index, fix_dept = defects[i][0]
+    start_pts = tuple(contour_poly[start_index][0])
+    end_pts = tuple(contour_poly[end_index][0])
+    mid_pts = (int((start_pts[0]+end_pts[0])/2), int((start_pts[1]+end_pts[1])/2))
+    #--Start Points-- (yellow color)
+    cv2.circle(test_window, start_pts, 2, (0,255,255), 2)
 ```
 <p align="center">
   <img width="200" height="165" src="Images/6.Start_Points/image1.jpg">
@@ -192,7 +201,7 @@ cv2.circle(test_window, final_point, 5, (0,0,0), 2)
   <img width="200" height="165" src="Images/6.Start_Points/image5.jpg">
 </p>
 
-```
+```python
                     #--End Points-- (black color)
                     cv2.circle(test_window, end_pts, 2, (0,0,0), 2)
 ```
