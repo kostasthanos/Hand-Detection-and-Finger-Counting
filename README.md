@@ -245,12 +245,35 @@ cv2.circle(test_window, far_pts, 2, (255,255,255), 2)
 </p>
 
 ## Finger Counting
-In order to do the finger counting we should find a way to check how many fingers are displayed. To do this we calculate the angle shown below.
+In order to do the finger counting we should find a way to check how many fingers are displayed. To do this we are calculating the angle between start point, defect point and end point as shown below.
 <p align="center">
   <img width="400" height="450" src="Images/defects.jpg">
 </p>
  
+```python
+# Distance between the start and the end defect point
+a = math.sqrt((end_pts[0] - start_pts[0]) ** 2 + (end_pts[1] - start_pts[1]) ** 2)
+# Distance between the farthest (defect) point and the start point
+b = math.sqrt((far_pts[0] - start_pts[0]) ** 2 + (far_pts[1] - start_pts[1]) ** 2)
+# Distance between the farthest (defect) point and the end point
+c = math.sqrt((end_pts[0] - far_pts[0]) ** 2 + (end_pts[1] - far_pts[1]) ** 2)  
 
+angle = math.acos((b ** 2 + c ** 2 - a ** 2) / (2 * b * c))  # Find each angle
+# If angle > 90 then the farthest point is "outside the area of fingers"
+if angle <= math.pi / 2:  
+	count += 1
+	frame[0:30, 170:200] = (0)
+```
+
+## Display Finger Counter
+
+```python
+for i in range(6):
+    if count==i:
+	cv2.putText(frame, str(count+1), (170,30), font, 2, (255,255,255), 2)
+```
+## Conclusion
+As we can see when running this script we come up with a problem. This problem is that we always have 1 finger displayed in the counter position.
 
 
 ## Author
