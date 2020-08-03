@@ -179,9 +179,20 @@ cv2.fillPoly(test_window, [max_contour], (255,255,255))
   <img width="200" height="165" src="Images/5.Contour_Poly/image5.jpg">
 </p>
 
-Then we will find the start and the end points
+By using the command
+```python
+defects = cv2.convexityDefects(contour_poly, hull)
+```
+we getting an array where each row contains the values: 
+1. start point
+2. end point
+3. farthest point 
+4. approximate distance to farthest point 
+
+Then we will find the points in which each defect starts and ends
 
 ```python
+defects = cv2.convexityDefects(contour_poly, hull)
 for i in range(defects.shape[0]): # Len of arrays
     start_index, end_index, far_pt_index, fix_dept = defects[i][0]
     start_pts = tuple(contour_poly[start_index][0])
@@ -202,8 +213,8 @@ for i in range(defects.shape[0]): # Len of arrays
 </p>
 
 ```python
-                    #--End Points-- (black color)
-                    cv2.circle(test_window, end_pts, 2, (0,0,0), 2)
+#--End Points-- (black color)
+cv2.circle(test_window, end_pts, 2, (0,0,0), 2)
 ```
 <p align="center">
   <img width="200" height="165" src="Images/7.End_Points/image1.jpg">
@@ -216,20 +227,7 @@ for i in range(defects.shape[0]): # Len of arrays
   <img width="200" height="165" src="Images/7.End_Points/image5.jpg">
 </p>
 
-```
-                    #--Far Points-- (white color)
-                    cv2.circle(test_window, far_pts, 2, (255,255,255), 2)
-```
-<p align="center">
-  <img width="200" height="165" src="Images/8.Far_Points/image1.jpg">
-  <img width="200" height="165" src="Images/8.Far_Points/image2.jpg">
-  <img width="200" height="165" src="Images/8.Far_Points/image3.jpg">
-</p>
-
-<p align="center">
-  <img width="200" height="165" src="Images/8.Far_Points/image4.jpg">
-  <img width="200" height="165" src="Images/8.Far_Points/image5.jpg">
-</p>
+Having calculated the starting and the ending points it's time to calculate the defect points.
 
 ## Author
 * **Konstantinos Thanos**
