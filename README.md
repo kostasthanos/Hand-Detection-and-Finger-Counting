@@ -247,7 +247,7 @@ cv2.circle(test_window, far_pts, 2, (255,255,255), 2)
 ## Finger Counting
 In order to do the finger counting we should find a way to check how many fingers are displayed. To do this we calculate the angle shown below.
 <p align="center">
-  <img width="400" height="280" src="Images/defects.jpg">
+  <img width="400" height="500" src="Images/defects.jpg">
 </p>
  
 
