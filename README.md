@@ -11,9 +11,8 @@ top_left = (245, 150)
 bottom_right = (580, 395) 
 ```
 
-<center>	
-<img width="300" height="250" src="https://raw.githubusercontent.com/kostasthanos/Hand-Gestures-and-Finger-Counting/master/Images/roi.png ">
-</center>
+<img align="center" width="300" height="250" src="https://raw.githubusercontent.com/kostasthanos/Hand-Gestures-and-Finger-Counting/master/Images/roi.png ">
+
 
 ## Binary mask for the hand
 We want to focuse only to user's hand. So in this part we must isolate the hand from the background. 
