@@ -37,28 +37,28 @@ def nothing(x):
 	pass
 
 cv2.namedWindow("trackbars")
-cv2.createTrackbar("L-H", "trackbars", 0, 179, nothing)
-cv2.createTrackbar("L-S", "trackbars", 0, 255, nothing)
-cv2.createTrackbar("L-V", "trackbars", 0, 255, nothing)
-cv2.createTrackbar("U-H", "trackbars", 179, 179, nothing)
-cv2.createTrackbar("U-S", "trackbars", 255, 255, nothing)
-cv2.createTrackbar("U-V", "trackbars", 255, 255, nothing)
+cv2.createTrackbar("Lower-H", "trackbars", 0, 179, nothing)
+cv2.createTrackbar("Lower-S", "trackbars", 0, 255, nothing)
+cv2.createTrackbar("Lower-V", "trackbars", 0, 255, nothing)
+cv2.createTrackbar("Upper-H", "trackbars", 179, 179, nothing)
+cv2.createTrackbar("Upper-S", "trackbars", 255, 255, nothing)
+cv2.createTrackbar("Upper-V", "trackbars", 255, 255, nothing)
 ```
 	
 After that is time to define a range for the colors, based on arrays
 
 ```python
 # Find finger (skin) color using trackbars
-l_h = cv2.getTrackbarPos("L-H", "trackbars")
-l_s = cv2.getTrackbarPos("L-S", "trackbars")
-l_v = cv2.getTrackbarPos("L-V", "trackbars")
-u_h = cv2.getTrackbarPos("U-H", "trackbars")
-u_s = cv2.getTrackbarPos("U-S", "trackbars")
-u_v = cv2.getTrackbarPos("U-V", "trackbars")
+low_h = cv2.getTrackbarPos("Lower-H", "trackbars")
+low_s = cv2.getTrackbarPos("Lower-S", "trackbars")
+low_v = cv2.getTrackbarPos("Lower-V", "trackbars")
+up_h = cv2.getTrackbarPos("Upper-H", "trackbars")
+up_s = cv2.getTrackbarPos("Upper-S", "trackbars")
+up_v = cv2.getTrackbarPos("Upper-V", "trackbars")
 
 # Create a range for the colors (skin color) 
-lower_color = np.array([l_h, l_s, l_v])
-upper_color = np.array([u_h, u_s, u_v])
+lower_color = np.array([low_h, low_s, low_v])
+upper_color = np.array([up_h, up_s, up_v])
 ```
     
 Finally we will get the following mask
