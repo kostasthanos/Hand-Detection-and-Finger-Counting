@@ -3,7 +3,7 @@ This is a project made with Python and OpenCV library.
 Below there are some instructions and information about the most significant parts of this project
  
 ## Preparing the environment
-First of all we define a smaller window (*test_window*) inside the main frame window which is our ROI (Region of Interest). Only inside this sub-frame our tests will be visible.
+First of all smaller window (*test_window*) is being defined inside the main frame window which is the ROI (Region of Interest). Only inside this sub-frame the tests will be visible.
 
 ```python
 # Points (x1,y1) and (x2, y2)
@@ -15,22 +15,22 @@ bottom_right = (580, 395)
 </p>
 
 ## Binary mask for the hand
-We want to focuse only to user's hand. So in this part we must isolate the hand from the background. 
+Focuse only to user's hand. So in this part the hand must be isolated from the background. 
 
-First of all we must apply Gaussian Blur on the ROI
+Apply Gaussian Blur on the ROI
 
 ```python
 test_window_blurred = cv2.GaussianBlur(test_window, (5,5), 0)
 ```
 
-Our window is in RGB format by default. We will convert it to HSV format
+The window is in RGB format by default. Convert it to HSV format
 
 ```python
 # Convert to HSV format
 hsv = cv2.cvtColor(test_window_blurred, cv2.COLOR_BGR2HSV)
 ```
 	
-In order to find user's skin color (proper values), user can modify the trackbars until the hand is the only thing that is visible. To enable trackbars window we must define it before we start our program. So after the import of the libraries we can add this part of code
+In order to find user's skin color (proper values), user can modify the trackbars until the hand is the only thing that is visible. To enable trackbars window someone must define it before starting the program. So after the import of the libraries add this part of code
 
 ```python
 def nothing(x):
@@ -61,7 +61,7 @@ lower_color = np.array([low_h, low_s, low_v])
 upper_color = np.array([up_h, up_s, up_v])
 ```
     
-Finally we will get the following mask
+Finally get the following mask
 
 ```python
 # Create a mask
@@ -74,7 +74,7 @@ cv2.imshow("Mask", mask) # Show mask frame
 </p>	
 
 ## Computing the maximum contour and it's convex hull
-For each frame on our capture we are finding the maximum contour inside the ROI.
+For each frame on the capture find the maximum contour inside the ROI.
 
 ### Max contour
 ```python
@@ -162,7 +162,7 @@ if M["m00"]!=0:
 ## Calculating the defect points in the hand
 [Contours in OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_contours_more_functions/py_contours_more_functions.html)  
 
-First we will find and draw polygon that is defined by the contour
+Find and draw the polygon that is defined by the contour
 
 ```python
 # --Contour Polygon--
@@ -181,17 +181,17 @@ cv2.fillPoly(test_window, [max_contour], (255,255,255))
   <img width="200" height="165" src="Images/5.Contour_Poly/image5.jpg">
 </p>
 
-By using the command
+The result of the command
 ```python
 defects = cv2.convexityDefects(contour_poly, hull)
 ```
-we getting an array where each row contains the values: 
+is array where each row contains the values: 
 1. start point
 2. end point
 3. farthest point 
 4. approximate distance to farthest point 
 
-Then we can find these points plus the mid points on each frame as below
+Then find these points plus the mid points on each frame as below
 
 ```python
 for i in range(defects.shape[0]): # Len of arrays
