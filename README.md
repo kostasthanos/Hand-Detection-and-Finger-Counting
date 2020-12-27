@@ -1,4 +1,4 @@
-# Hand Tracking and Finger Counting 
+# Hand Gestures and Finger Counting 
 This is a project made with Python and OpenCV library. 
 Below there are some instructions and information about the most significant parts of this project
  
