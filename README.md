@@ -22,22 +22,21 @@ h, w = frame.shape[:2] # h, w = 480, 640
 ```
 
 ## Create mask for the hand
-Focuse only to user's hand. So in this part the hand must be isolated from the background. 
-
-Apply Gaussian Blur on the ROI
+Focuse only to user's hand. So in this part the hand must be isolated from the background.  
+Apply Gaussian Blur on the ROI.
 
 ```python
 test_window_blurred = cv2.GaussianBlur(test_window, (5,5), 0)
 ```
 
-The window is in BGR format by default. Convert it to HSV format
+The window is in BGR format by default. Convert it to HSV format.
 
 ```python
 # Convert ROI only to HSV format
 hsv = cv2.cvtColor(test_window_blurred, cv2.COLOR_BGR2HSV)
 ```
 	
-In order to find user's skin color (array values), user can modify the trackbars until the hand is the only thing that is visible. To enable trackbars window someone must define it before starting the program. So after the importing the necessary packages add this part of code
+In order to find user's skin color (array values), user can modify the trackbars until the hand is the only thing that is visible. To enable trackbars window someone must define it before starting the program. So after the importing the necessary packages add this part of code :
 
 ```python
 def nothing(x):
@@ -52,7 +51,7 @@ cv2.createTrackbar("Upper-S", "trackbars", 255, 255, nothing)
 cv2.createTrackbar("Upper-V", "trackbars", 255, 255, nothing)
 ```
 	
-After that is time to define a range for the colors, based on arrays
+After that is time to define a range for the colors, based on arrays.
 
 ```python
 # Find finger (skin) color using trackbars
@@ -68,7 +67,7 @@ lower_color = np.array([low_h, low_s, low_v])
 upper_color = np.array([up_h, up_s, up_v])
 ```
     
-Finally get the mask
+Finally get the mask.
 
 ```python
 # Create a mask
