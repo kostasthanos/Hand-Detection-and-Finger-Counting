@@ -98,7 +98,7 @@ if len(contours) > 0:
   <img width="200" height="165" src="Images/1.Contour/image5.jpg">
 </p>
 
-### Convex Hull of max contour
+### Convex Hull around max contour
 
 ```python
 # Find the convex hull "around" the max_contour
