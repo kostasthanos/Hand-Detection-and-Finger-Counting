@@ -15,7 +15,7 @@ cv2.rectangle(frame, (top_left[0]-5, top_left[1]-5), (bottom_right[0]+5, bottom_
 <img width="200" height="165" src="Images/roi.png ">
 </p>
 
-## Binary mask for the hand
+## Create mask for the hand
 Focuse only to user's hand. So in this part the hand must be isolated from the background. 
 
 Apply Gaussian Blur on the ROI
@@ -24,14 +24,14 @@ Apply Gaussian Blur on the ROI
 test_window_blurred = cv2.GaussianBlur(test_window, (5,5), 0)
 ```
 
-The window is in RGB format by default. Convert it to HSV format
+The window is in BGR format by default. Convert it to HSV format
 
 ```python
-# Convert to HSV format
+# Convert ROI only to HSV format
 hsv = cv2.cvtColor(test_window_blurred, cv2.COLOR_BGR2HSV)
 ```
 	
-In order to find user's skin color (proper values), user can modify the trackbars until the hand is the only thing that is visible. To enable trackbars window someone must define it before starting the program. So after the import of the libraries add this part of code
+In order to find user's skin color (array values), user can modify the trackbars until the hand is the only thing that is visible. To enable trackbars window someone must define it before starting the program. So after the importing the necessary packages add this part of code
 
 ```python
 def nothing(x):
@@ -62,7 +62,7 @@ lower_color = np.array([low_h, low_s, low_v])
 upper_color = np.array([up_h, up_s, up_v])
 ```
     
-Finally get the following mask
+Finally get the mask
 
 ```python
 # Create a mask
