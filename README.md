@@ -128,8 +128,8 @@ cv2.drawContours(test_window, [convhull], -1, (0,0,255), 3, 2)
 This is the *highest* point of the convex hull.
 
 ```python
-min_y = frame.shape[0] # Set the minimum y-value equal to frame's height value
-final_point = (frame.shape[1], frame.shape[0])
+min_y = h # Set the minimum y-value equal to frame's height value
+final_point = (w, h)
 for i in range(len(convhull)):
     point = (convhull[i][0][0], convhull[i][0][1])
     if point[1] < min_y:
