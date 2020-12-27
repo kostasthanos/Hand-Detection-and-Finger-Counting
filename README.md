@@ -290,7 +290,7 @@ if len(points) <= 1 :
 		cv2.putText(frame, "1", (w-35,30), font, 2, text_color, 2)
 ```
 ## Conclusion
-This project is aiming understanding topics such as contours, convex hull, contour polygon. Also it's focuses on the defect points which we are finding on the detected hand. The second part of Finger Counting needs improvement (zero fingers on screen) but in general it works well.
+This project is aiming on understanding topics such as contours, convex hull, contour polygon. Also it's focuses on the defect points which we are finding on the detected hand. The second part of Finger Counting needs improvement (zero fingers on screen) but in general it works well.
 
 ## Author
 * **Konstantinos Thanos**
