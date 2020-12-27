@@ -191,7 +191,7 @@ The result of the command
 ```python
 defects = cv2.convexityDefects(contour_poly, hull)
 ```
-is array where each row contains the values: 
+is an array where each *row* contains the values: 
 1. start point
 2. end point
 3. farthest point 
