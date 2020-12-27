@@ -15,6 +15,11 @@ cv2.rectangle(frame, (top_left[0]-5, top_left[1]-5), (bottom_right[0]+5, bottom_
 <img width="200" height="165" src="Images/roi.png ">
 </p>
 
+```python
+# Frame shape : height and width
+h, w = frame.shape[:2] # h, w = 480, 640
+```
+
 ## Create mask for the hand
 Focuse only to user's hand. So in this part the hand must be isolated from the background. 
 
