@@ -200,12 +200,15 @@ is an array where each *row* contains the values:
 Then find these points plus the mid points on each frame as below
 
 ```python
+points = []
 for i in range(defects.shape[0]): # Len of arrays
     start_index, end_index, far_pt_index, fix_dept = defects[i][0]
     start_pts = tuple(contour_poly[start_index][0])
     end_pts = tuple(contour_poly[end_index][0])
     far_pts = tuple(contour_poly[far_pt_index][0])
-    mid_pts = (int((start_pts[0]+end_pts[0])/2), int((start_pts[1]+end_pts[1])/2))
+    mid_pts = (int((start_pts[0]+end_pts[0])/2), int((start_pts[1]+end_pts[1])/2))   
+    points.append(mid_pts)
+    
     #--Start Points-- (yellow color)
     cv2.circle(test_window, start_pts, 2, (0,255,255), 2)
 ```
@@ -281,10 +284,13 @@ if angle <= 90:
 for c in range(5):
 	if count == c:
 		cv2.putText(frame, str(count+1), (w-35,30), font, 2, text_color, 2)
+		
+if len(points) <= 1 :
+	frame[0:40, w-40:w] = (0)
+		cv2.putText(frame, "1", (w-35,30), font, 2, text_color, 2)
 ```
 ## Conclusion
-As we can see when running this script we come up with a problem. This problem is that we always have 1 finger displayed in the counter position.
-
+This project is aiming understanding topics such as contours, convex hull, contour polygon. Also it's focuses on the defect points which we are finding on the detected hand. The second part of Finger Counting needs improvement (zero fingers on screen) but in general it works well.
 
 ## Author
 * **Konstantinos Thanos**
