@@ -130,7 +130,7 @@ for i in range(len(convhull)):
     if point[1] < min_y:
 	min_y = point[1]
 	final_point = point
-# Draw a circle (black color) to the point with the minimum y-value (height)
+# Draw a circle (black color) to the point with the minimum y-value
 cv2.circle(test_window, final_point, 5, (0,0,0), 2)
 ```
 <p align="center">
@@ -169,7 +169,7 @@ Find and draw the polygon that is defined by the contour
 # --Contour Polygon--
 contour_poly = cv2.approxPolyDP(max_contour, 0.01*cv2.arcLength(max_contour,True), True)
 # Draw contour polygon (white color)
-cv2.fillPoly(test_window, [max_contour], (255,255,255)) 
+cv2.fillPoly(test_window, [max_contour], text_color) 
 ```
 <p align="center">
   <img width="200" height="165" src="Images/5.Contour_Poly/image1.jpg">
@@ -232,7 +232,7 @@ cv2.circle(test_window, end_pts, 2, (0,0,0), 2)
 
 ```python
 #--Far Points-- (white color)
-cv2.circle(test_window, far_pts, 2, (255,255,255), 2)
+cv2.circle(test_window, far_pts, 2, text_color, 2)
 ```
 <p align="center">
   <img width="200" height="165" src="Images/8.Far_Points/image1.jpg">
@@ -252,26 +252,30 @@ In order to do the finger counting we should find a way to check how many finger
 </p>
  
 ```python
+# --Calculate distances--
+# If p1 = (x1, y1) and p2 = (x2, y2) the the distance between them is
+ # Dist : sqrt[(x2-x1)^2 + (y2-y1)^2]
+ 
 # Distance between the start and the end defect point
-a = math.sqrt((end_pts[0] - start_pts[0]) ** 2 + (end_pts[1] - start_pts[1]) ** 2)
+a = math.sqrt((end_pts[0] - start_pts[0])**2 + (end_pts[1] - start_pts[1])**2)
 # Distance between the farthest (defect) point and the start point
-b = math.sqrt((far_pts[0] - start_pts[0]) ** 2 + (far_pts[1] - start_pts[1]) ** 2)
+b = math.sqrt((far_pts[0] - start_pts[0])**2 + (far_pts[1] - start_pts[1])**2)
 # Distance between the farthest (defect) point and the end point
-c = math.sqrt((end_pts[0] - far_pts[0]) ** 2 + (end_pts[1] - far_pts[1]) ** 2)  
+c = math.sqrt((end_pts[0] - far_pts[0])**2 + (end_pts[1] - far_pts[1])**2)  
 
-angle = math.acos((b ** 2 + c ** 2 - a ** 2) / (2 * b * c))  # Find each angle
+angle = math.acos((b**2 + c**2 - a**2) / (2*b*c))  # Find each angle
 # If angle > 90 then the farthest point is "outside the area of fingers"
-if angle <= math.pi / 2:  
+if angle <= 90:  
 	count += 1
-	frame[0:30, 170:200] = (0)
+	frame[0:40, w-40:w] = (0)
 ```
 
 ## Display Finger Counter
 
 ```python
-for i in range(6):
-    if count==i:
-	cv2.putText(frame, str(count+1), (170,30), font, 2, (255,255,255), 2)
+for c in range(5):
+	if count == c:
+		cv2.putText(frame, str(count+1), (w-35,30), font, 2, text_color, 2)
 ```
 ## Conclusion
 As we can see when running this script we come up with a problem. This problem is that we always have 1 finger displayed in the counter position.
