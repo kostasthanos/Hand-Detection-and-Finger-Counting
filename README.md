@@ -168,7 +168,7 @@ if M["m00"]!=0:
 ## Calculating the Defect points
 [Contours in OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_contours_more_functions/py_contours_more_functions.html)  
 
-Find and draw the polygon that is defined by the contour
+Find and draw the polygon that is defined by the contour.
 
 ```python
 # --Contour Polygon--
@@ -197,7 +197,7 @@ is an array where each *row* contains the values:
 3. farthest point 
 4. approximate distance to farthest point 
 
-Then find these points plus the mid points on each frame as below
+Then find these points plus the mid points on each frame as below.
 
 ```python
 points = []
@@ -261,7 +261,7 @@ In order to do the finger counting we should find a way to check how many finger
  
 ```python
 # --Calculate distances--
-# If p1 = (x1, y1) and p2 = (x2, y2) the the distance between them is
+# If p1 = (x1, y1) and p2 = (x2, y2) are two points, then the distance between them is
  # Dist : sqrt[(x2-x1)^2 + (y2-y1)^2]
  
 # Distance between the start and the end defect point
