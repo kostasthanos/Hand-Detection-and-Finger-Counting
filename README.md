@@ -1,6 +1,6 @@
 # Hand Gestures and Finger Counting 
-This is a project made with Python and OpenCV library. 
-Below there are some instructions and information about the most significant parts of this project
+This is a project made with Python and OpenCV library.  
+Below there are some instructions and information about the most significant parts of this project.
  
 ## Preparing the environment
 Define a smaller window (*test_window*) inside the main frame window which is our ROI (Region of Interest). Only inside this window the tests will be visible.
