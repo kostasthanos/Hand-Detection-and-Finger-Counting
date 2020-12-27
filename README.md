@@ -165,7 +165,7 @@ if M["m00"]!=0:
   <img width="200" height="165" src="Images/4.Center_max_contour/image4.jpg">
 </p>
 
-## Calculating the defect points in the hand
+## Calculating the Defect points
 [Contours in OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_contours_more_functions/py_contours_more_functions.html)  
 
 Find and draw the polygon that is defined by the contour
