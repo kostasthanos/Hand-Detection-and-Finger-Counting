@@ -146,7 +146,7 @@ cv2.circle(test_window, final_point, 5, (0,0,0), 2)
 </p>
 
 ## Finding the center of the max_contour
-The center of max contour is defined by the point (cx, cy) using *cv2.momenth()*
+The center of max contour is defined by the point (cx, cy) using *cv2.moments()*.
 
 ```python
  M = cv2.moments(max_contour) # Moments
