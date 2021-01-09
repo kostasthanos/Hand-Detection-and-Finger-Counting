@@ -177,10 +177,10 @@ contour_poly = cv2.approxPolyDP(max_contour, 0.01*cv2.arcLength(max_contour,True
 cv2.fillPoly(test_window, [max_contour], text_color) 
 ```
 <p align="center">
-  <img width="200" height="165" src="Images/5.Contour_Poly/image1.jpg">
-  <img width="200" height="165" src="Images/5.Contour_Poly/image2.jpg">
-  <img width="200" height="165" src="Images/5.Contour_Poly/image3.jpg">
-  <img width="200" height="165" src="Images/5.Contour_Poly/image4.jpg">
+  <img width="200" height="165" src="Images/5.Contour_Poly/image1.png">
+  <img width="200" height="165" src="Images/5.Contour_Poly/image2.png">
+  <img width="200" height="165" src="Images/5.Contour_Poly/image3.png">
+  <img width="200" height="165" src="Images/5.Contour_Poly/image4.png">
 </p>
 
 The result of the command
