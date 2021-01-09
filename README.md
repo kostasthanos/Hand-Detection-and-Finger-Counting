@@ -80,7 +80,7 @@ cv2.imshow("Mask", mask) # Show mask frame
 </p>	
 
 ## Computing the maximum contour and it's convex hull
-For each frame on the video capture find the maximum contour inside the ROI.
+For each frame on the video capture, find the maximum contour inside the ROI.
 
 ### Max contour
 ```python
