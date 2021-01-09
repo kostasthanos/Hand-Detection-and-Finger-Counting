@@ -180,11 +180,7 @@ cv2.fillPoly(test_window, [max_contour], text_color)
   <img width="200" height="165" src="Images/5.Contour_Poly/image1.jpg">
   <img width="200" height="165" src="Images/5.Contour_Poly/image2.jpg">
   <img width="200" height="165" src="Images/5.Contour_Poly/image3.jpg">
-</p>
-
-<p align="center">
   <img width="200" height="165" src="Images/5.Contour_Poly/image4.jpg">
-  <img width="200" height="165" src="Images/5.Contour_Poly/image5.jpg">
 </p>
 
 The result of the command
