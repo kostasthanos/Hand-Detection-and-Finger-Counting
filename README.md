@@ -124,7 +124,7 @@ cv2.drawContours(test_window, [convhull], -1, (0,0,255), 3, 2)
   <img width="200" height="165" src="Images/2.Convex_Hull/image6.jpg">
 </p>
 
-## Finding the point with the minimum y-value inside the convex hull
+## Finding the point with the minimum y-value
 This is the *highest* point of the convex hull.
 
 ```python
