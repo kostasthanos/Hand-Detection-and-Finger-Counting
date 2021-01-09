@@ -1,4 +1,4 @@
-# Hand Gestures and Finger Counting 
+# Hand Detection and Finger Counting 
 This is a project made with Python and OpenCV library.  
 Below there are some instructions and information about the most significant parts of this project.  
 For a better and visual understanding of this project and it's concepts, watch the video : [Hand-Gesures_Finger-Counting]()
