@@ -3,7 +3,7 @@ This is a project made with Python and OpenCV library.
 Below there are some instructions and information about the most significant parts of this project.
  
 ## Preparing the environment
-Define a smaller window (*test_window*) inside the main frame window which will be our ROI (Region of Interest).  
+Define a smaller window (*test_window*) inside the main frame which will be the ROI (Region of Interest).  
 Only inside this window the tests will be visible.
 
 ```python
