@@ -1,7 +1,7 @@
 # Hand Gestures and Finger Counting 
 This is a project made with Python and OpenCV library.  
 Below there are some instructions and information about the most significant parts of this project.  
-For a better and visual understanding of this project and it's concepts, watch the video : [Hand-Gesures_Finger-Counting]{}
+For a better and visual understanding of this project and it's concepts, watch the video : [Hand-Gesures_Finger-Counting]()
  
 ## Preparing the environment
 Define a smaller window (*test_window*) inside the main frame which will be the ROI (Region of Interest).  
@@ -289,7 +289,7 @@ if len(points) <= 1 :
 ## Conclusion
 This project is aiming on understanding topics such as contours, convex hull, contour polygon. Also it's focuses on the defect points which we are finding on the detected hand.
 
-For a better and visual understanding of this project and it's concepts, watch the video : [Hand-Gesures_Finger-Counting]{}
+For a better and visual understanding of this project and it's concepts, watch the video : [Hand-Gesures_Finger-Counting]()
 
 ## Author
 * **Konstantinos Thanos**
