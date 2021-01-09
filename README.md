@@ -8,7 +8,7 @@ Only inside this window the tests will be visible.
 
 ```python
 # Define the Region Of Interest (ROI) window 
-top_left = (245, 150) 
+top_left = (245, 50) 
 bottom_right = (580, 395) 
 cv2.rectangle(frame, (top_left[0]-5, top_left[1]-5), (bottom_right[0]+5, bottom_right[1]+5), (0,255,255), 3)
 ```
