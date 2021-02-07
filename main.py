@@ -1,7 +1,7 @@
 #=================================#
 # Hand Gestures & Finger Counting #
 #           with OpenCV           #
-#           -----------           #
+#---------------------------------#
 #       Konstantinos Thanos       #
 #       Mathematician, MSc        #
 #              2020               #
