@@ -1,10 +1,10 @@
 # Hand Detection and Finger Counting 
-This is a project made with Python and OpenCV library.  
-Below there are some instructions and information about the most significant parts of this project.  
-For a better and visual understanding of this project and it's concepts,  
-watch the video : [Hand-Gesures_Finger-Counting](https://www.youtube.com/watch?v=h4ZSPsGE1lU)
+This is a project made with Python and OpenCV library.    
+For a better and visual understanding of this project and it's concepts, watch the video : [Hand-Gesures_Finger-Counting](https://www.youtube.com/watch?v=h4ZSPsGE1lU)
 
 [![Hand-Detection_Finger-Counting](http://img.youtube.com/vi/h4ZSPsGE1lU/0.jpg)](https://www.youtube.com/watch?v=h4ZSPsGE1lU "Hand Detection and Finger Counting using Python and OpenCV")
+
+Below there are some instructions and information about the most significant parts of this project.
  
 ## Preparing the environment
 Define a smaller window (*test_window*) inside the main frame which will be the ROI (Region of Interest).  
