@@ -40,7 +40,7 @@ The window is in BGR format by default. Convert it to HSV format.
 hsv = cv2.cvtColor(test_window_blurred, cv2.COLOR_BGR2HSV)
 ```
 	
-In order to find user's skin color (array values), user can modify the trackbars until the hand is the only thing that is visible. To enable trackbars window someone must define it before starting the program. So after the importing the necessary packages add this part of code :
+In order to find user's skin color (array values), user can modify the trackbars until the hand is the only thing that is visible. To enable trackbars window someone must define it before starting the program. So after importing the necessary packages add this part of code :
 
 ```python
 def nothing(x):
