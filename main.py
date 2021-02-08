@@ -1,11 +1,11 @@
-#=================================#
-# Hand Gestures & Finger Counting #
-#           with OpenCV           #
-#---------------------------------#
-#       Konstantinos Thanos       #
-#       Mathematician, MSc        #
-#              2020               #
-#=================================#
+#==================================#
+# Hand Detection & Finger Counting #
+#            with OpenCV           #
+#----------------------------------#
+#        Konstantinos Thanos       #
+#        Mathematician, MSc        #
+#               2020               #
+#==================================#
 
 # Import packages
 import numpy as np
