@@ -292,7 +292,7 @@ if len(points) <= 1 :
 ## Conclusion
 This project is aiming on understanding topics such as contours, convex hull, contour polygon. Also it focuses on the defect points which we are finding on the detected hand.
 
-For a better and visual understanding of this project and it's concepts, watch the video : [Hand-Gesures_Finger-Counting](https://www.youtube.com/watch?v=h4ZSPsGE1lU)
+For a better and visual understanding of this project and it's concepts, watch the video : [video](https://www.youtube.com/watch?v=h4ZSPsGE1lU).
 
 ## Author
 * **Konstantinos Thanos**
